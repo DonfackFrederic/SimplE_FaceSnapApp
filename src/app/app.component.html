@@ -1,2 +1,3 @@
-<app-face-snap [faceSnap]="faceSnap1" />
-<app-face-snap [faceSnap]="faceSnap2" />
+@for (faceSnapItem of faceSnapList; track faceSnapItem.title) {
+   <app-face-snap [faceSnapItem]="faceSnapItem" /> 
+}

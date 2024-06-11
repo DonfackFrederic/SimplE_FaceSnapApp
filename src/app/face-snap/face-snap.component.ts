@@ -13,18 +13,18 @@ import { FaceSnapClass } from '../models/face-snap';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FaceSnapComponent { 
-  @Input() faceSnap!: FaceSnapClass;
+  @Input() faceSnapItem!: FaceSnapClass;
   
   textButtonMessage: string = "Ajouter un snap";
   isSnapped: boolean = false;
 
   AddSnap() : string {
-    this.faceSnap.addSnap();
+    this.faceSnapItem.addSnap();
     this.isSnapped = true;
     return "Snap Ajouté";
   }
   RemoveSnap(): string{
-    this.faceSnap.removeSnap();
+    this.faceSnapItem.removeSnap();
     this.isSnapped = false;
     return "Snap Retiré";
   }
@@ -33,9 +33,7 @@ export class FaceSnapComponent {
     if(this.isSnapped){
       this.textButtonMessage=this.RemoveSnap();
     }else{
-      if (!this.isSnapped){
-        this.textButtonMessage= this.AddSnap();
-      }
+      this.textButtonMessage= this.AddSnap();
     }
   }
 }
