@@ -37,3 +37,15 @@
     border-radius: 2px;
   }
 }
+
+.snapped {
+  background-color: rgba(rgb(241, 239, 122), 0.4);
+  color: rgb(100, 15, 0);
+  button {
+    box-shadow: rgb(232, 238, 144) 3px 3px 7px;
+    color: rgb(100, 28, 0);
+    &:active {
+      box-shadow: rgb(71, 75, 53) 0 0 5px;
+    }
+  }
+}

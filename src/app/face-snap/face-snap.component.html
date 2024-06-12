@@ -3,7 +3,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<div class="face-snap-card">
+<div class="face-snap-card" [ngClass]="{ snapped: isSnapped }">
     <img [src]="faceSnapItem.urlImage" alt="">
     <h2>{{faceSnapItem.title}}</h2>
     <p>{{faceSnapItem.description}}</p>
