@@ -7,7 +7,7 @@
     <img [src]="faceSnapItem.urlImage" alt="">
     <h2>{{faceSnapItem.title | uppercase}}</h2>
     <p>{{faceSnapItem.description}}</p>
-    <p>snap créé le : {{faceSnapItem.createdDate | date}}</p>
+    <p>snap créé le : {{faceSnapItem.createdDate | date:"dd-MMMM-YYYY à HH:mm"}}</p>
     @if (faceSnapItem.location) {
         <p>Lieux de prise : {{faceSnapItem.location}}</p>
     }
