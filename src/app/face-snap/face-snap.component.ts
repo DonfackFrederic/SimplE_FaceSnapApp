@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FaceSnapClass } from '../models/face-snap';
 
@@ -7,6 +7,7 @@ import { FaceSnapClass } from '../models/face-snap';
   standalone: true,
   imports: [
     CommonModule,
+    NgStyle
   ],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss',

@@ -16,7 +16,7 @@
     }
     <p>
         <button (click)="onSnap()">{{textButtonMessage}}</button>
-        🤳 {{faceSnapItem.snapsNumber}}
+        <span [ngStyle]="{color: 'rgb(0, '+faceSnapItem.snapsNumber+',0)'}">🤳 <strong>{{faceSnapItem.snapsNumber}}</strong></span>
     </p>
 </div>
 
