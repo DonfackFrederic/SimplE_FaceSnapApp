@@ -49,3 +49,18 @@
     }
   }
 }
+
+.number-pipe{
+  margin: 2px 0px;
+  p{
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: rgb(147, 204, 147);
+    font-weight: bold;
+    box-shadow: 2px 2px 10px 0px;
+    &:hover{
+      transform: translate(100px);
+      transition: ease-in-out 400ms;
+    }
+  }
+}
