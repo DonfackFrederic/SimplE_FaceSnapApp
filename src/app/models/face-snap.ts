@@ -18,4 +18,11 @@ export class FaceSnapClass{
     setLocation(location : string) :void {
         this.location = location;
     }
+
+    // creation de la methode withLocation pour la mention de la location dans le services
+    // nous remplisons la variable location et retournons l'objet a jour
+    withLocation(location: string): FaceSnapClass{
+        this.setLocation(location)
+        return this;
+    }
 }

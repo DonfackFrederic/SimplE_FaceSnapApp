@@ -15,7 +15,5 @@ export class FaceSnapListComponent {
   faceSnapList !: FaceSnapClass[]
   ngOnInit(): void {
     this.faceSnapList = this.FaceSnapService.getFaceSnapList();
-    
-    this.faceSnapList[0].setLocation('terrain de la 7ème grande guerre ninja');
   }
 }
