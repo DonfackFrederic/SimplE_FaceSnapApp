@@ -1,3 +1,5 @@
 @for (faceSnapItem of faceSnapList; track faceSnapItem.title) {
-    <app-face-snap [faceSnapItem]="faceSnapItem" /> 
- }
+    @if(faceSnapItem.id){
+        <app-face-snap [faceSnapItemId]="faceSnapItem.id" />
+    }
+}

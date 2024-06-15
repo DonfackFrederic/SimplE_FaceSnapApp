@@ -1,11 +1,14 @@
 export class FaceSnapClass{
 
+    id?: string;
     location ?: string;
     constructor(public urlImage : string, 
                 public title: string, 
                 public description: string,
                 public createdDate: Date,
-                public snapsNumber: number){}
+                public snapsNumber: number){
+                    this.id= crypto.randomUUID().substring(0-8)
+                }
 
     addSnap(): void{
         this.snapsNumber ++;
@@ -24,5 +27,15 @@ export class FaceSnapClass{
     withLocation(location: string): FaceSnapClass{
         this.setLocation(location)
         return this;
+    }
+
+    SnapOperation (operation: 'addSnap'|'removeSnap'){
+        if(operation == 'addSnap'){
+            this.addSnap();
+          }
+        
+          if(operation == 'removeSnap'){
+            this.removeSnap();
+          }
     }
 }

@@ -22,4 +22,18 @@ export class FaceSnapsService {
   getFaceSnapList(): FaceSnapClass[]{
     return this.FaceSnapList
   }
+
+  getSnapFaceById(id: string) : FaceSnapClass | undefined{
+    return this.FaceSnapList.find(faceSnap => faceSnap.id == id)
+  }
+
+ SnapOperation(id: string, operation: 'addSnap' | 'removeSnap'){
+  let SnapFaceItem = this.getSnapFaceById(id);
+  if(!SnapFaceItem){
+    throw new Error('FaceSnap non existant');
+  }
+  
+  SnapFaceItem.SnapOperation(operation)
+ }
+
 }
