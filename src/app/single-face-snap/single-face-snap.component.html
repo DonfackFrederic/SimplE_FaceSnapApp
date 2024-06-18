@@ -1,0 +1,49 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+@if(faceSnapItem){
+    <div class="face-snap-card" [ngClass]="{ snapped: isSnapped }">
+        <img [src]="faceSnapItem.urlImage" alt="">
+        <h2>{{faceSnapItem.title | uppercase}}</h2>
+        <p>{{faceSnapItem.description}}</p>
+        <p>snap créé le : {{faceSnapItem.createdDate | date:"dd-MMMM-YYYY à HH:mm"}}</p>
+        @if (faceSnapItem.location) {
+            <p>Lieux de prise : {{faceSnapItem.location}}</p>
+        }
+        @else{
+            <p>Lieux de prise : non spécifié</p>
+        }
+        <p>
+            <button (click)="onSnap()">{{textButtonMessage}}</button>
+            <span [ngStyle]="{color: 'rgb(0, '+faceSnapItem.snapsNumber+',0)'}">🤳 <strong>{{faceSnapItem.snapsNumber}}</strong></span>
+        </p>
+
+        <!-- those next line is talking about number pipe transform and 
+            it is not about our application it is just for learn -->
+            <!-- ces pipes tire leur paramettre dans le changement de langue effecteur précédements -->
+        <div class="number-pipe">
+            <!-- les . qui separe les decimal en anglais deviennent des , comme dans le système francophone -->
+            <!-- lorsqu'un pipe prend plusieur argument, on les separe par : -->
+
+            <!-- code specifi que le text precedent sera lu comme la monaie -->
+            <p>Prix de la figurine simple en EURO: {{ 20.998 | currency:'EUR':'code':'1.0-1' }} </p>
+            <p>Prix de la figurine géante en EURO: {{ 29.988 | currency:'EUR' }} </p>
+
+            <!-- le paramètre present dans les pipes sont toujours des chane de caractère
+            pour celui de decimal, le 1.0-1 veut dire un chiffre avant la virgule, et 0-1
+            minimum 1 chiffre apres la virgule et maximum 1 -->
+
+            <p>Maitrise des Art ninja en % : {{ 0.999 | percent:'1.0-2' }}</p>
+            <p>Maitrise des Art ninja valeur decimal: {{ 9.119 | number:'1.0-1' }}</p>
+            <a routerLink="/FaceSnapList">retour vers la liste </a>
+        </div>
+    </div>
+}
+@else {
+    <p>Aucun faceSnap Trouver</p>
+}
+
+
+

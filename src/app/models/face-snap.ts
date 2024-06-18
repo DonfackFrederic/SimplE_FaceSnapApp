@@ -7,7 +7,7 @@ export class FaceSnapClass{
                 public description: string,
                 public createdDate: Date,
                 public snapsNumber: number){
-                    this.id= crypto.randomUUID().substring(0-8)
+                    this.id= crypto.randomUUID().substring(0,8)
                 }
 
     addSnap(): void{
